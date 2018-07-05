@@ -21,7 +21,7 @@ class Database {
 	// query function
 	public function query($sql) {
 		$result = $this->connection->query($sql);
-		$this->confirm_query($sresult);
+		$this->confirm_query($result);
 		return $result;
 	}
 

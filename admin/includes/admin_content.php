@@ -8,20 +8,23 @@
                 <small>Subheading</small>
             </h1>
             <?php 
-            $sql = "SELECT * FROM users WHERE id = 1";
-            $result = $database->query($sql);
-            $user_found = mysqli_fetch_array($result);
-            echo $user_found['username'];
-            // foreach($user_found as $user) {
-            //     $user1 = $user['username'];
-            //     echo $user1;
+            
+            // $result_set = User::find_all_users();
+           
+            // while($row = mysqli_fetch_array($result_set)) {
+            //     echo "<p>{$row['username']}</p>";
             // }
-            // $users = $database->query("SELECT * FROM users");
-            // $users = $users->mysqli_fetch_assoc();
+            
+            // $found_user = User::find_user_by_id(1);
+            // echo $found_user['username'];
+            // $user = User::instantation($found_user);
+            // $users = User::find_all_users();
             // foreach($users as $user) {
-            //     echo $user['username'];
+            //     echo $user->id . "<br>";
             // }
-
+            $found_user = User::find_user_by_id(1);
+            echo $found_user->username;
+             
             ?>
             <ol class="breadcrumb">
                 <li>
