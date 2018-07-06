@@ -22,9 +22,14 @@
             // foreach($users as $user) {
             //     echo $user->id . "<br>";
             // }
-            $found_user = User::find_user_by_id(1);
-            echo $found_user->username;
-             
+            // $found_user = User::find_user_by_id(1);
+            // echo $found_user->username;
+            $user = new User();
+            $user->username = "Example_username"; 
+            $user->password = "Example_password"; 
+            $user->first_name = "Example_firstname"; 
+            $user->last_name = "Example_lastname"; 
+            $user->create();
             ?>
             <ol class="breadcrumb">
                 <li>
