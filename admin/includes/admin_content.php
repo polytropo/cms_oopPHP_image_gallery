@@ -24,12 +24,26 @@
             // }
             // $found_user = User::find_user_by_id(1);
             // echo $found_user->username;
+            // Crerate new user when opening admin.php page
             $user = new User();
-            $user->username = "Example_username"; 
-            $user->password = "Example_password"; 
-            $user->first_name = "Example_firstname"; 
-            $user->last_name = "Example_lastname"; 
+            $user->username = "Example_username4"; 
+            $user->password = "Example_password4"; 
+            $user->first_name = "Example_firstname4"; 
+            $user->last_name = "Example_lastname4"; 
             $user->create();
+            // Update user
+            // $user = User::find_user_by_id(9);
+            // $user->first_name = "firstname edited";
+            // $user->update();
+            // Delete user
+            // $user =  User::find_user_by_id(6);
+            // $user->delete();
+            // $user = User::find_user_by_id(2);
+            // $user->last_name = "updated second lastname";
+            // $user->save();
+            // $user = new User();
+            // $user->username = "primoz2second";
+            // $user->save();
             ?>
             <ol class="breadcrumb">
                 <li>
