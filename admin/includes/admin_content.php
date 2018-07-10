@@ -18,25 +18,26 @@
             // $found_user = User::find_user_by_id(1);
             // echo $found_user['username'];
             // $user = User::instantation($found_user);
-            // $users = User::find_all_users();
+            // Displays all users usernames
+            // $users = User::find_all();
             // foreach($users as $user) {
-            //     echo $user->id . "<br>";
+            //     echo $user->username . "<br>";
             // }
             // $found_user = User::find_user_by_id(1);
             // echo $found_user->username;
             // Crerate new user when opening admin.php page
-            $user = new User();
-            $user->username = "Example_username4"; 
-            $user->password = "Example_password4"; 
-            $user->first_name = "Example_firstname4"; 
-            $user->last_name = "Example_lastname4"; 
-            $user->create();
+            // $user = new User();
+            // $user->username = "Example_username5"; 
+            // $user->password = "Example_password5"; 
+            // $user->first_name = "Example_firstname5"; 
+            // $user->last_name = "Example_lastname1"; 
+            // $user->save();
             // Update user
             // $user = User::find_user_by_id(9);
             // $user->first_name = "firstname edited";
             // $user->update();
             // Delete user
-            // $user =  User::find_user_by_id(6);
+            // $user = User::find_by_id(19);
             // $user->delete();
             // $user = User::find_user_by_id(2);
             // $user->last_name = "updated second lastname";
@@ -44,6 +45,20 @@
             // $user = new User();
             // $user->username = "primoz2second";
             // $user->save();
+            // $photos = Photo::find_all();
+            // foreach($photos as $photo) {
+            //     echo $photo->description;
+            // }
+            echo INCLUDES_PATH;
+            echo "<br>";
+            echo SITE_ROOT;
+            // $photo = new Photo();
+            // $photo->title = "image2"; 
+            // $photo->description = "description of second image"; 
+            // $photo->filename = "nameofimage2.jpg"; 
+            // $photo->type = "image"; 
+            // $photo->size = "233212"; 
+            // $photo->create();
             ?>
             <ol class="breadcrumb">
                 <li>
