@@ -24,7 +24,7 @@ $photos = Photo::find_all();
                     <div class="col-lg-12">
                         <h1 class="page-header">
                             Photos
-                            <small>Subheading</small>
+                            <!-- <small>Subheading</small> -->
                         </h1>
                         <div class="col-md-12">
                             <table class="table table-hover">
@@ -35,26 +35,38 @@ $photos = Photo::find_all();
                                         <th>File Name</th>
                                         <th>Title</th>
                                         <th>Size</th>
+                                        <th>Comments</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                        foreach($photos as $photo) { 
-                                            echo "
+                                        foreach($photos as $photo) :
+                                            
+                                    ?>
                                             <tr>
-                                                <td><img src='{$photo->picture_path()}' alt='{$photo->title}' class='admin-photo-thumbnail'>
-                                                    <div class='pictures_link'>
-                                                        <a href='delete_photo.php?id={$photo->id}'>Delete</a>
-                                                        <a href='edit_photo.php?id={$photo->id}'>Edit</a>
-                                                        <a href=''>View</a>
+                                                <td><img src="<?php echo $photo->picture_path(); ?>" class='admin-photo-thumbnail'>
+                                                    <div class='action_links'>
+                                                        <a href='delete_photo.php?id=<?php echo $photo->id; ?>'>Delete</a>
+                                                        <a href='edit_photo.php?id=<?php echo $photo->id; ?>'>Edit</a>
+                                                        <a href='../photo.php?id=<?php echo $photo->id; ?>'>View</a>
                                                     </div>
                                                 </td>
-                                                <td>{$photo->id}</td>
-                                                <td>{$photo->filename}</td>
-                                                <td>{$photo->title}</td>
-                                                <td>{$photo->size}</td>
-                                            </tr>";
-                                        }
+                                                <td><?php echo $photo->id; ?></td>
+                                                <td><?php echo $photo->filename; ?></td>
+                                                <td><?php echo $photo->title; ?></td>
+                                                <td><?php echo $photo->size; ?></td>
+                                                <td>
+                                                    <a href="comment_photo.php?id=<?php echo $photo->id ?>"><?php 
+                                                    $comments = Comment::find_the_comments($photo->id);
+                                                    $string = count($comments) == 1 ? " Comment" : "Comemnts";
+                                                    $string = count($comments) == 1 ? " Comment" : " Comments";
+                                                    echo count($comments) . $string;
+
+                                                ?>
+                                                    </a>
+                                                </td>   
+                                            </tr>
+                                    <?php endforeach
                                     ?>
                                 </tbody>
                             </table>  <!-- End of table -->

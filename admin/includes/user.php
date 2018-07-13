@@ -56,11 +56,6 @@ class User extends Db_object {
 			return false;
 		}
 	}
-
-
-
-
-
 	
 } // End of Class User
 
