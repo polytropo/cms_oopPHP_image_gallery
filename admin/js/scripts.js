@@ -7,6 +7,8 @@ $(document).ready(function() {
 	var image_name;
 	var photo_id;
 
+
+
 	$(".modal_thumbnails").click(function(){
 		$("#set_user_image").prop('disabled', false);
 		user_href = $("#user-id").prop('href');
@@ -48,3 +50,13 @@ $(document).ready(function() {
 	tinymce.init({ selector:'textarea' });	
 });
 
+// Edit photo sidebar
+$(".info-box-header").click(function(){
+	$(".inside").slideToggle("fast");
+	$("#toggle").toggleClass("glyphicon-menu-down glyphicon , glyphicon-menu-up glyphicon");
+});
+// End of editr photo sidebar
+// Delete event
+$(".delete_link").click(function(){
+	return confirm("Are you sure you wantt to delete this item");
+});

@@ -29,6 +29,7 @@ $comments = Comment::find_the_comments($_GET['id']);
                 </h1>
                 
                 <div class="col-md-12">
+                    <p class="bg-success"><?php echo $message; ?></p>
                     <table class="table table-hover">
                         <thead>
                             <tr>

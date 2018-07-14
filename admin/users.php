@@ -49,7 +49,7 @@ $users = User::find_all();
                                                 
                                                 <td>{$user->username}
                                                     <div class='action_links'>
-                                                        <a href='delete_user.php?id={$user->id}' >Delete</a>
+                                                        <a class='delete_link' href='delete_user.php?id={$user->id}' >Delete</a>
                                                         <a href='edit_user.php?id={$user->id}' >Edit</a>
                                                         
                                                     </div>

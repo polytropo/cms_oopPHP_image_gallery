@@ -12,7 +12,7 @@
     
     if($user) {
         $session->message("The {$user->username} user has been deleted");
-        $user->delete();
+        $user->delete_photo();
         
         redirect("users.php");
     } else {

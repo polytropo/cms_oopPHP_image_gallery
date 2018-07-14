@@ -14,7 +14,8 @@ if(isset($_POST['submit'])) {
     $body = trim($_POST['body']);
     $new_comment = Comment::create_comment($photo->id, $author, $body);
     if($new_comment && $new_comment->save()) {
-        redirect("photo.php?id={$photo->id}");
+        redirect("photo.php?id={$photo->id}");      
+       
     } else {
         $message = "There was some problem with your comment.";
     }
@@ -24,6 +25,10 @@ if(isset($_POST['submit'])) {
 }
 
 $comments = Comment::find_the_comments($photo->id);
+
+
+
+
 
 
 
@@ -64,6 +69,7 @@ $comments = Comment::find_the_comments($photo->id);
         <!-- Comments Form -->
         <div class="well">
             <h4>Leave a Comment:</h4>
+            <p class="bg-success"><?php echo $message; ?></p>
             <form role="form" method="post" action="">
                 <div class="form-group">
                     <label for="author">Author</label>
