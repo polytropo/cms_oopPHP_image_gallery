@@ -31,7 +31,7 @@ class Session {
 
 	private function check_message() {
 		if(isset($_SESSION['message'])) {
-			$this->message = $_SESSIOn['message'];
+			$this->message = $_SESSION['message'];
 			unset($_SESSION['message']);
 		} else {
 			$this->message = "";
@@ -67,5 +67,6 @@ class Session {
 }
 
 $session = new Session;
+$message = $session->message();
 
 ?>
